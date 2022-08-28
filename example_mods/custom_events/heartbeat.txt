@@ -1,0 +1,7 @@
+makes a vignette pulse on the edges
+of the screen
+
+used in damnation
+
+value 1: starting alpha(0-1) higher alpha = more intense
+if left empty, will default to 1

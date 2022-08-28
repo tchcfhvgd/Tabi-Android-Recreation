@@ -1,0 +1,49 @@
+{
+	"storyName": "Curse",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "tabi",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"my-battle",
+			"tabi",
+			[
+				86,
+				113,
+				135
+			]
+		],
+		[
+			"last-chance",
+			"tabi",
+			[
+				86,
+				113,
+				135
+			]
+		],
+		[
+			"genocide",
+			"tabi-crazy",
+			[
+				46,
+				53,
+				75
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"bf",
+		""
+	],
+	"weekName": "curse"
+}
