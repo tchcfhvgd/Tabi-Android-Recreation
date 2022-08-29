@@ -175,8 +175,6 @@ class PlayState extends MusicBeatState
 	public var cpuControlled:Bool = false;
 	public var practiceMode:Bool = false;
 
-	public var shaking:Bool = true;
-
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
 
@@ -2954,7 +2952,7 @@ class PlayState extends MusicBeatState
 					if(Math.isNaN(duration)) duration = 0;
 					if(Math.isNaN(intensity)) intensity = 0;
 
-					if(duration > 0 && intensity != 0 && shaking) {
+					if(duration > 0 && intensity != 0) {
 						targetsArray[i].shake(intensity, duration);
 					}
 				}
