@@ -46,8 +46,8 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
-          haxelib install lime
-          haxelib install openfl
+          haxelib install lime 7.9.0 --quiet 
+          haxelib install openfl 9.1.0 --quiet
           haxelib --never install flixel
           haxelib run lime setup flixel
           haxelib install flixel-tools
@@ -73,7 +73,10 @@ jobs:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Compile
-        run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
+        run: |      
+          haxelib set lime 7.9.0
+          haxelib set openfl 9.1.0 
+          ANDROID_SETUP true
 
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
