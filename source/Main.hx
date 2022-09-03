@@ -33,7 +33,6 @@ class Main extends Sprite
 	{
 		super();
 
-
 		if (stage != null)
 		{
 			init();
@@ -67,7 +66,6 @@ class Main extends Sprite
 			gameWidth = Math.ceil(stageWidth / zoom);
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
-
 
 		#if !debug
 		initialState = TitleState;
