@@ -1,3 +1,7 @@
+local healthDrop = 0.0000001;
+local healthshouldbe = 2;
+local ccap = 0;
+
 function onCreate()
 	-- background shit
 	makeLuaSprite('Bg', 'fire/new/youhavebeendestroyed', -510, -230);
@@ -22,6 +26,11 @@ function onCreate()
 	scaleObject('Fire3',1.5,1.5)
 	addAnimationByPrefix('Fire3','fireglow','FireStage',24,true)
 	objectPlayAnimation('Fire3','fireglow',false)
+	
+	makeLuaSprite('vignette', 'tabi/vignette', 0, 0);
+	setObjectCamera('vignette', 'camother');
+	setProperty('vignette.alpha', 0);
+	setProperty('health', healthshouldbe)
 
 	addLuaSprite('Bg', false);
 	addLuaSprite('Fire',false);
@@ -30,5 +39,26 @@ function onCreate()
 	addLuaSprite('tablebg',false);
 	addLuaSprite('boombox',false);
 	addLuaSprite('sumtable', true);
+	addLuaSprite('vignette', true);
 
+end
+
+function onNoteMiss(id, direction, noteType, isSustainNote)
+
+	
+
+end
+
+function onUpdate()
+
+	--debugPrint(healthshouldbe)
+
+	ccap = getProperty('combo');
+	if getProperty('combo') > 40 then
+		ccap = 40
+	end
+	
+	setProperty('vignette.alpha', 1 - (getProperty('health') / 2));
+
+	close(true); --For performance reasons, close this script once the stage is fully loaded, as this script won't be used anymore after loading the stage
 end
