@@ -4,15 +4,7 @@ local continue = false;
 
 function opponentNoteHit()
     health = getProperty('health')
-    if getProperty('health') > 0.02 then
-        setProperty('health', health- 0.02);
+    if getProperty('health') > 0 then
+        setProperty('health', health- 0.007);
     end
-end
-function onCreate()
-
-	health = getProperty('health')
-
-	if getProperty('health') > 0.2 then
-	    setProperty('health', health+ 100)
-	end
 end
