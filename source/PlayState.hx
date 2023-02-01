@@ -366,6 +366,8 @@ class PlayState extends MusicBeatState
 					curStage = 'mallEvil';
 				case 'senpai' | 'roses':
 					curStage = 'school';
+        case 'Genocide':
+          curStage = 'genocide';
 				case 'thorns':
 					curStage = 'schoolEvil';
 				default:
@@ -850,6 +852,10 @@ class PlayState extends MusicBeatState
 			case 'schoolEvil':
 				var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
 				insert(members.indexOf(dadGroup) - 1, evilTrail);
+
+     case 'genocide':
+				var tabiTrail = new FlxTrail(dad, null, 2, 5, 0.3, 0.04); //nice
+				insert(members.indexOf(dadGroup) - 1, tabiTrail);
 		}
 
 		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
