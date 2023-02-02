@@ -850,7 +850,7 @@ class PlayState extends MusicBeatState
 				insert(members.indexOf(gfGroup) - 1, fastCar);
 			
 			case 'genocide':
-				var tabiTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
+				var tabiTrail = new FlxTrail(dad, null, 4, 10, 0.3, 0.069);
 				insert(members.indexOf(dadGroup) - 1, tabiTrail);
 		}
 
