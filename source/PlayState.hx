@@ -354,22 +354,10 @@ class PlayState extends MusicBeatState
 		if(PlayState.SONG.stage == null || PlayState.SONG.stage.length < 1) {
 			switch (songName)
 			{
-				case 'spookeez' | 'south' | 'monster':
-					curStage = 'spooky';
-				case 'pico' | 'blammed' | 'philly' | 'philly-nice':
-					curStage = 'philly';
-				case 'milf' | 'satin-panties' | 'high':
-					curStage = 'limo';
-				case 'cocoa' | 'eggnog':
-					curStage = 'mall';
-				case 'winter-horrorland':
-					curStage = 'mallEvil';
-				case 'senpai' | 'roses':
-					curStage = 'school';
+        case 'My Battle || Last Chance':
+        curStage = 'curse';
         case 'Genocide':
           curStage = 'genocide';
-				case 'thorns':
-					curStage = 'schoolEvil';
 				default:
 					curStage = 'stage';
 			}
@@ -850,7 +838,7 @@ class PlayState extends MusicBeatState
 				insert(members.indexOf(gfGroup) - 1, fastCar);
 			
 			case 'genocide':
-				var tabiTrail = new FlxTrail(dad, null, 4, 5, 0.3, 0.075);
+        var tabiTrail = new FlxTrail(dad, null, 2, 5, 0.3, 0.04);
 				insert(members.indexOf(dadGroup) - 1, tabiTrail);
 		}
 
