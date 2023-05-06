@@ -3583,7 +3583,13 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned)
 		{
+			minusHealth = true;
 			health -= 0.05 * healthLoss;
+			if (crazyMode)
+			{
+				health -= 0.08;
+				//health -= 0.02;
+			}
 			if(instakillOnMiss)
 			{
 				vocals.volume = 0;
