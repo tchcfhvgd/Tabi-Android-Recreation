@@ -1972,14 +1972,21 @@ class PlayState extends MusicBeatState
 			vignette.alpha = 0;
 		}
 	
+		if (crazyMode && storyDifficulty > 0 && minusHealth)
+		{
+			if (health > 0)
+			{
+				health -= 0.009;
+			}
+		}
+		
 		if (isGenocide && storyDifficulty > 0 && minusHealth)
 		{
 			if (health > 0)
 			{
-				health -= 0.01;
+		  	health -= 0.001;
 			}
 		}
-		
 		/*if (isGenocide)
 		{
 			setBrightness(((health / 2) - 1 < 0) ? 0 : (((health / 2) - 1) * 2) / 32);
