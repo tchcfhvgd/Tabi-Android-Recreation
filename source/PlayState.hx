@@ -3618,7 +3618,7 @@ class PlayState extends MusicBeatState
 	{
 		if (isGenocide && storyDifficulty > 0)
 			health -= 0.001;
-		elseif (crazyMode && storyDifficulty > 0)
+		else if (crazyMode && storyDifficulty > 0)
 			health -= 0.003;
 
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
