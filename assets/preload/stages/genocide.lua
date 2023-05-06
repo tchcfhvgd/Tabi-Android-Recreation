@@ -1,5 +1,3 @@
-local healthDrop = 0.0000001;
-local healthshouldbe = 2;
 local ccap = 0;
 
 function onCreate()
@@ -40,25 +38,4 @@ function onCreate()
 	addLuaSprite('boombox',false);
 	addLuaSprite('sumtable', true);
 	addLuaSprite('vignette', true);
-
-end
-
-function onNoteMiss(id, direction, noteType, isSustainNote)
-
-	
-
-end
-
-function onUpdate()
-
-	--debugPrint(healthshouldbe)
-
-	ccap = getProperty('combo');
-	if getProperty('combo') > 40 then
-		ccap = 40
-	end
-	
-	setProperty('vignette.alpha', 1 - (getProperty('health') / 2));
-
-	close(true); --For performance reasons, close this script once the stage is fully loaded, as this script won't be used anymore after loading the stage
 end
