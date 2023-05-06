@@ -182,7 +182,6 @@ class PlayState extends MusicBeatState
 	public var noteShaked:Bool = false;
 	public var crazyMode:Bool = false;
 	public var isGenocide:Bool = false;
-	public var minusHealth:Bool = false;
 
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
@@ -289,7 +288,6 @@ class PlayState extends MusicBeatState
 		{
 			health = 2;
 		}
-		minusHealth = false;
 
 		// for lua
 		instance = this;
@@ -1972,21 +1970,6 @@ class PlayState extends MusicBeatState
 			vignette.alpha = 0;
 		}
 	
-		if (crazyMode && storyDifficulty > 0 && minusHealth)
-		{
-			if (health > 0)
-			{
-				health -= 0.003;
-			}
-		}
-		
-		if (isGenocide && storyDifficulty > 0 && minusHealth)
-		{
-			if (health > 0)
-			{
-		  	health -= 0.001;
-			}
-		}
 		/*if (isGenocide)
 		{
 			setBrightness(((health / 2) - 1 < 0) ? 0 : (((health / 2) - 1) * 2) / 32);
@@ -3633,8 +3616,10 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-		if (isGenocide)
-			health -= 0.03
+		if (isGenocide && storyDifficulty > 0)
+			health -= 0.001
+		elseif (crazyMode && storyDifficulty > 0)
+			health -= 0.003
 
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
@@ -3691,7 +3676,6 @@ class PlayState extends MusicBeatState
 	{
 		if (!note.wasGoodHit)
 		{
-			minusHealth = false;
 			if (ClientPrefs.hitsoundVolume > 0 && !note.hitsoundDisabled)
 			{
 				FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.hitsoundVolume);
