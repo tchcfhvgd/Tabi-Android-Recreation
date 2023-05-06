@@ -3616,10 +3616,8 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-		if (isGenocide && storyDifficulty > 0)
-			health -= 0.001;
-		else if (crazyMode && storyDifficulty > 0)
-			health -= 0.003;
+		  if (isGenocide && storyDifficulty > 0)
+			health -= 0.02;
 
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
