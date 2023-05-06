@@ -55,7 +55,7 @@ import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
-import ChromaticAbberation;
+import ChromaticAberration;
 #if sys
 import sys.FileSystem;
 #end
@@ -1980,14 +1980,14 @@ class PlayState extends MusicBeatState
 			}
 		}
 		
-		if (isGenocide)
+		/*if (isGenocide)
 		{
 			setBrightness(((health / 2) - 1 < 0) ? 0 : (((health / 2) - 1) * 2) / 32);
 			setContrast(((health / 2) - 1 < 0) ? 1 : 1 + ((health / 2) - 1) / 8);
 		} else {
 			setBrightness(0.0);
 			setContrast(1.0);
-		}
+		}*/
 
 		callOnLuas('onUpdate', [elapsed]);
 
