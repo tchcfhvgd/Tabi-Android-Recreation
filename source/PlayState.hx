@@ -1976,7 +1976,7 @@ class PlayState extends MusicBeatState
 		{
 			if (health > 0)
 			{
-				health -= 0.005;
+				health -= 0.003;
 			}
 		}
 		
@@ -2358,7 +2358,6 @@ class PlayState extends MusicBeatState
 				if (!daNote.mustPress && daNote.wasGoodHit && !daNote.hitByOpponent && !daNote.ignoreNote)
 				{
 					opponentNoteHit(daNote);
-					minusHealth = true;
 				}
 
 				if(daNote.mustPress && cpuControlled) {
@@ -3634,7 +3633,14 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-	 minusHealth = true;
+
+	 if (!daNote.mustPress && daNote.wasGoodHit && !daNote.hitByOpponent)
+	 {
+	   minusHealth = true;
+	 }else{
+	   minusHealth = false;
+	 }
+
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
 
