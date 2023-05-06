@@ -3633,15 +3633,8 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-
-	 if (daNote.hitByOpponent)
-	 {
-	   minusHealth = true;
-	 }
-	 else if (!daNote.hitByOpponent)
-   {
-	   minusHealth = false;
-	 }
+		if (isGenocide)
+			health -= 0.03
 
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
