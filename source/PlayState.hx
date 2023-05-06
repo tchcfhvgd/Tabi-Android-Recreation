@@ -2353,6 +2353,11 @@ class PlayState extends MusicBeatState
 					opponentNoteHit(daNote);
 				}
 
+				if (!daNote.mustPress)
+				{
+					minusHealth = true;
+				}
+
 				if(daNote.mustPress && cpuControlled) {
 					if(daNote.isSustainNote) {
 						if(daNote.canBeHit) {
@@ -3687,6 +3692,7 @@ class PlayState extends MusicBeatState
 	{
 		if (!note.wasGoodHit)
 		{
+			minusHealth = false;
 			if (ClientPrefs.hitsoundVolume > 0 && !note.hitsoundDisabled)
 			{
 				FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.hitsoundVolume);
