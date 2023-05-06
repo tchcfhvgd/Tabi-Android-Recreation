@@ -55,6 +55,7 @@ import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
+import ChromaticAbberation;
 #if sys
 import sys.FileSystem;
 #end
