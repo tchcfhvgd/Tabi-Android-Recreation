@@ -3634,10 +3634,12 @@ class PlayState extends MusicBeatState
 	function opponentNoteHit(note:Note):Void
 	{
 
-	 if (!daNote.mustPress && daNote.wasGoodHit && !daNote.hitByOpponent)
+	 if (daNote.hitByOpponent)
 	 {
 	   minusHealth = true;
-	 }else{
+	 }
+	 else if (!daNote.hitByOpponent)
+   {
 	   minusHealth = false;
 	 }
 
