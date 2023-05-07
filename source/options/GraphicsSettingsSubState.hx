@@ -67,6 +67,13 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		option.onChange = onChangeFramerate;
 		#end
 
+		var option:Option = new Option('Shaders', //Name
+			'If unchecked, disables shaders.\nIt\'s used for some visual effects, and also CPU intensive for weaker phones.', //Description
+			'shaders', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
+		addOption(option);
+	
 		/*
 		var option:Option = new Option('Persistent Cached Data',
 			'If checked, images loaded will stay in memory\nuntil the game is closed, this increases memory usage,\nbut basically makes reloading times instant.',
