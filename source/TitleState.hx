@@ -703,6 +703,23 @@ class TitleState extends MusicBeatState
 				remove(ngSpr);
 				remove(credGroup);
 				FlxG.camera.flash(FlxColor.WHITE, 4);
+				
+
+	
+
+			    new FlxTimer().start(0.01, function(tmr:FlxTimer)
+
+			    {
+
+				  if (logoBl.angle == -4)
+
+					 FlxTween.angle(logoBl, logoBl.angle, 4, 4, {ease: FlxEase.quartInOut});
+
+				  if (logoBl.angle == 4)
+
+					 FlxTween.angle(logoBl, logoBl.angle, -4, 4, {ease: FlxEase.quartInOut});
+
+			    }, 0);
 
 				var easteregg:String = FlxG.save.data.psychDevsEasterEgg;
 				if (easteregg == null) easteregg = '';
