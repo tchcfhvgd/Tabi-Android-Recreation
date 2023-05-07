@@ -3618,11 +3618,11 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-		  if (crazyMode && storyDifficulty > 1 && !ClientPrefs.hDrain)
+		  if (crazyMode && storyDifficulty > 1 && ClientPrefs.hDrain)
 			health -= 0.02;
-			else if (isGenocide && storyDifficulty > 0 && !ClientPrefs.hDrain)
+			else if (isGenocide && storyDifficulty > 0 && ClientPrefs.hDrain)
 			health -= 0.009;
-			else if (isGenocideRetro && !ClientPrefs.hDrain)
+			else if (isGenocideRetro && ClientPrefs.hDrain)
 			health -= 0.015;
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
