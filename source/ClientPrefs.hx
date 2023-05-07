@@ -29,7 +29,9 @@ class ClientPrefs {
 	public static var healthBarAlpha:Float = 1;
 	public static var controllerMode:Bool = #if android true #else false #end;
 	public static var hitsoundVolume:Float = 0;
-        public static var pauseMusic:String = 'Tea Time';
+  public static var pauseMusic:String = 'Tea Time';
+  public static var hDrain:Bool = true;
+  public static var shaders:Bool = true;
 	public static var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
 		'scrolltype' => 'multiplicative', 
@@ -121,6 +123,8 @@ class ClientPrefs {
 		FlxG.save.data.badWindow = badWindow;
 		FlxG.save.data.safeFrames = safeFrames;
 		FlxG.save.data.gameplaySettings = gameplaySettings;
+		FlxG.save.data.hDrain = hDrain;
+	  FlxG.save.data.shaders = shaders;
 		FlxG.save.data.controllerMode = controllerMode;
 		FlxG.save.data.hitsoundVolume = hitsoundVolume;
 		FlxG.save.data.pauseMusic = pauseMusic;
@@ -155,6 +159,12 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.noteSplashes != null) {
 			noteSplashes = FlxG.save.data.noteSplashes;
+		}
+		if(FlxG.save.data.hDrain != null) {
+			hDrain = FlxG.save.data.hDrain;
+		}
+		if(FlxG.save.data.shaders != null) {
+			shaders = FlxG.save.data.shaders;
 		}
 		if(FlxG.save.data.lowQuality != null) {
 			lowQuality = FlxG.save.data.lowQuality;
