@@ -182,6 +182,7 @@ class PlayState extends MusicBeatState
 	public var noteShaked:Bool = false;
 	public var crazyMode:Bool = false;
 	public var isGenocide:Bool = false;
+	public var isGenocideRetro:Bool = false;
 
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
@@ -284,7 +285,8 @@ class PlayState extends MusicBeatState
 
 		isGenocide = (SONG.song.toLowerCase() == 'genocide');
 		crazyMode = (SONG.song.toLowerCase() == 'genocide' && storyDifficulty >= 2);
-		if (crazyMode)
+		isGenocideRetro = (SONG.song.toLowerCase() == 'genocide-retro' && storyDifficulty >= 2);
+		if (crazyMode && isGenocideRetro)
 		{
 			health = 2;
 		}
@@ -1960,7 +1962,7 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 
-		if (crazyMode)
+		if (crazyMode && isGenocideRetro)
 		{
 			vignette.alpha = 1 - (health / 3);
 		} else if (isGenocide)
@@ -3616,11 +3618,12 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-		  if (crazyMode && storyDifficulty > 1)
+		  if (crazyMode && storyDifficulty > 1 && !ClientPrefs.hDrain)
 			health -= 0.02;
-			else if (isGenocide && storyDifficulty > 0)
+			else if (isGenocide && storyDifficulty > 0 && !ClientPrefs.hDrain)
 			health -= 0.009;
-
+			else if (isGenocideRetro && !ClientPrefs.hDrain)
+			health -= 0.015;
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
 
